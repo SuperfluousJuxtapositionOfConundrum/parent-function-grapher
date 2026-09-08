@@ -25,12 +25,12 @@ The engine parses and plots core algebraic functional boundaries smoothly by dyn
 The rendering lifecycle transforms abstract mathematical data points into structural display vectors through the following precise path:
 
 Define Function Interval (Domain [$x_{min}, x_{max}$])
-  └──> Step Resolution Loop (High-density analytical step generation)
-        └──> Mathematical Coordinate Evaluation ($x, y$)
-              └──> **Cartesian Transformation Matrix Call**
-                    ├──> $Pixel_X = (x \times Scale_{Factor}) + Offset_X$
-                    └──> $Pixel_Y = (y \times Scale_{Factor}) + Offset_Y$
-                          └──> Vector Translation Command (Pure Turtle Line Draw)
+  -> Step Resolution Loop (High-density analytical step generation)
+        -> Mathematical Coordinate Evaluation ($x, y$)
+              -> **Cartesian Transformation Matrix Call**
+                    -> $Pixel_X = (x \times Scale_{Factor}) + Offset_X$
+                    -> $Pixel_Y = (y \times Scale_{Factor}) + Offset_Y$
+                          -> Vector Translation Command (Pure Turtle Line Draw)
 
 ---
 
