@@ -45,7 +45,7 @@ Ensure you have Python 3.10+ installed. Run the engine framework via your termin
 
 ### Execution Example:
 ```python
-from ParentFuncs import LinFunc
+from ParentFuncs import lin_func_coords, draw_lin_func
 
 # Extract coordinate tracks as a list of tuples
 coordinates = lin_func_coords(1, 0)
