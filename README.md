@@ -44,5 +44,5 @@ Define Function Interval (Domain [$x_{min}, x_{max}$])
 Ensure you have Python 3.10+ installed. Run the engine framework via your terminal:
 
 ```bash
-python math_engine/graph_engine.py
+python ParentFuncs.py
 ```
