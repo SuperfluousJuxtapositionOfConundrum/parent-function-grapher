@@ -43,6 +43,14 @@ Define Function Interval (Domain [$x_{min}, x_{max}$])
 
 Ensure you have Python 3.10+ installed. Run the engine framework via your terminal:
 
-```bash
-python ParentFuncs.py
+### Execution Example:
+```python
+from ParentFuncs import LinFunc
+
+# Extract coordinate tracks as a list of tuples
+coordinates = lin_func_coords1, 0)
+print(coordinates)
+
+# Plot a function over a specified domain interval
+draw_lin_func(1,0)
 ```
