@@ -4,7 +4,7 @@ import math
 e = math.e
 t = turtle.Turtle()
 
-def linFunc(m, c):
+def lin_func_coords(m, c):
     """Generates coordinate points for a linear function.
 
     Formula: y = m * x + c
@@ -25,7 +25,7 @@ def linFunc(m, c):
         x += 1
     return li
 
-def quadFunc(a, b, c):
+def quad_func_coords(a, b, c):
     """Generates coordinate points for a quadratic function (parabola).
 
     Formula: y = a * (x - b)^2 + c
@@ -47,7 +47,7 @@ def quadFunc(a, b, c):
         x += 0.125
     return li
 
-def sqrtFunc(a, b, c):
+def sqrt_func_coords(a, b, c):
     """Generates coordinate points for a square root function.
 
     Formula: y = a * sqrt(x - b) + c
@@ -69,7 +69,7 @@ def sqrtFunc(a, b, c):
         x += .125
     return li
 
-def logFunc(a, b, c):
+def log_func_coords(a, b, c):
     """Generates coordinate points for a natural logarithmic function.
 
     Formula: y = a * log(x - b) + c
@@ -91,7 +91,7 @@ def logFunc(a, b, c):
         x += .125
     return li
 
-def expFunc(a, b):
+def exp_func_coords(a, b):
     """Generates coordinate points for an exponential function.
 
     Formula: y = a * b^x
@@ -112,7 +112,7 @@ def expFunc(a, b):
         x += .125
     return li
 
-def recipFunc(a, b, c):
+def recip_func_coords(a, b, c):
     """Generates split coordinate points for a reciprocal rational function.
 
     Formula: y = a / (x - b) + c
@@ -139,7 +139,7 @@ def recipFunc(a, b, c):
         x += 0.125
     return left, right
 
-def absFunc(a, b, c):
+def abs_func_coords(a, b, c):
     """Generates coordinate points for an absolute value function.
 
     Formula: y = a * |x - b| + c
@@ -161,7 +161,7 @@ def absFunc(a, b, c):
         x += .125
     return li
 
-def _drawGrid(t):
+def _draw_grid(t):
     """Draws the green grid coordinate system on a black background.
 
     Marks the x and y axes with ticks and unit labels from -5 to 5.
@@ -229,7 +229,7 @@ def _drawGrid(t):
         grid_num += 1
         current_yPos += 100
 
-def _initTurtle():
+def _init_turtle():
     """Initializes the turtle renderer and draws the baseline background grid.
 
     Returns:
@@ -237,17 +237,17 @@ def _initTurtle():
     """
 
     t.pensize(3)
-    _drawGrid(t)
+    _draw_grid(t)
     return t
 
-def _doneTurtle():
+def _done_turtle():
     """Finalizes the canvas render, hides the cursor, and keeps the window open."""
 
     t.hideturtle()
     turtle.update()
     turtle.done()
 
-def drawLinFunc(m, c):
+def draw_lin_func(m, c):
     """Plots a linear function directly onto the grid environment.
 
     Args:
@@ -255,16 +255,16 @@ def drawLinFunc(m, c):
         c (float): The y-intercept.
     """
 
-    _initTurtle()
+    _init_turtle()
 
-    t.goto(-500, linFunc(m, c)[0][1] * 100)
+    t.goto(-500, lin_func_coords(m, c)[0][1] * 100)
     t.pencolor("blue")
     t.pendown()
-    t.goto(500, linFunc(m, c)[10][1] * 100)
+    t.goto(500, lin_func_coords(m, c)[10][1] * 100)
 
-    _doneTurtle()
+    _done_turtle()
 
-def drawQuadFunc(a, b, c):
+def draw_quad_func(a, b, c):
     """Plots a quadratic parabola function onto the grid environment.
 
     Args:
@@ -273,18 +273,18 @@ def drawQuadFunc(a, b, c):
         c (float): Vertical vertex shift.
     """
 
-    _initTurtle()
+    _init_turtle()
 
-    points = quadFunc(a, b, c)
+    points = quad_func_coords(a, b, c)
     t.goto(points[0][0] * 100, points[0][1] * 100)
     t.pencolor("blue")
     t.pendown()
     for point in points:
         t.goto(point[0] * 100, point[1] * 100)
     
-    _doneTurtle()
+    _done_turtle()
 
-def drawSqrtFunc(a, b, c):
+def draw_sqrt_func(a, b, c):
     """Plots a square root function onto the grid environment.
 
     Args:
@@ -293,18 +293,18 @@ def drawSqrtFunc(a, b, c):
         c (float): Vertical vertex shift.
     """
 
-    _initTurtle()
+    _init_turtle()
 
-    points = sqrtFunc(a, b, c)
+    points = sqrt_func_coords(a, b, c)
     t.goto(points[0][0] * 100, points[0][1] * 100)
     t.pencolor("blue")
     t.pendown()
     for point in points:
         t.goto(point[0] * 100, point[1] * 100)
     
-    _doneTurtle()
+    _done_turtle()
 
-def drawLogFunc(a, b, c):
+def draw_log_func(a, b, c):
     """Plots a natural logarithmic function onto the grid environment.
 
     Args:
@@ -313,18 +313,18 @@ def drawLogFunc(a, b, c):
         c (float): Vertical shift.
     """
 
-    _initTurtle()
+    _init_turtle()
 
-    points = logFunc(a, b, c)
+    points = log_func_coords(a, b, c)
     t.goto(points[0][0] * 100, points[0][1] * 100)
     t.pencolor("blue")
     t.pendown()
     for point in points:
         t.goto(point[0] * 100, point[1] * 100)
     
-    _doneTurtle()
+    _done_turtle()
 
-def drawExpFunc(a, b):
+def draw_exp_func(a, b):
     """Plots an exponential function onto the grid environment.
 
     Args:
@@ -332,23 +332,23 @@ def drawExpFunc(a, b):
         b (float/str): Exponent base value (supports 'e' or '-e' strings).
     """
     
-    _initTurtle()
+    _init_turtle()
 
     if b == "e":
         b = e
     elif b == "-e":
         b = -e
 
-    points = expFunc(a, b)
+    points = exp_func_coords(a, b)
     t.goto(points[0][0] * 100, points[0][1] * 100)
     t.pencolor("blue")
     t.pendown()
     for point in points:
         t.goto(point[0] * 100, point[1] * 100)
     
-    _doneTurtle()
+    _done_turtle()
 
-def drawRecipFunc(a, b, c):
+def draw_recip_func(a, b, c):
     """Plots a reciprocal hyperbola split into left and right asymptotic branches.
 
     Args:
@@ -357,9 +357,9 @@ def drawRecipFunc(a, b, c):
         c (float): Horizontal asymptote position.
     """
 
-    _initTurtle()
+    _init_turtle()
 
-    left_points, right_points = recipFunc(a, b, c)
+    left_points, right_points = recip_func_coords(a, b, c)
 
     t.goto(left_points[0][0] * 100, left_points[0][1] * 100)
     t.pencolor("blue")
@@ -373,9 +373,9 @@ def drawRecipFunc(a, b, c):
     for point in right_points:
         t.goto(point[0] * 100, point[1] * 100)
     
-    _doneTurtle()
+    _done_turtle()
 
-def drawAbsFunc(a, b, c):
+def draw_abs_func(a, b, c):
     """Plots an absolute value V-shaped function onto the grid environment.
 
     Args:
@@ -384,13 +384,13 @@ def drawAbsFunc(a, b, c):
         c (float): Vertical vertex shift.
     """
 
-    _initTurtle()
+    _init_turtle()
 
-    points = absFunc(a, b, c)
+    points = abs_func_coords(a, b, c)
     t.goto(points[0][0] * 100, points[0][1] * 100)
     t.pencolor("blue")
     t.pendown()
     for point in points:
         t.goto(point[0] * 100, point[1] * 100)
     
-    _doneTurtle()
+    _done_turtle()
