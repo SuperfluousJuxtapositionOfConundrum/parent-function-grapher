@@ -48,7 +48,7 @@ Ensure you have Python 3.10+ installed. Run the engine framework via your termin
 from ParentFuncs import LinFunc
 
 # Extract coordinate tracks as a list of tuples
-coordinates = lin_func_coords1, 0)
+coordinates = lin_func_coords(1, 0)
 print(coordinates)
 
 # Plot a function over a specified domain interval
